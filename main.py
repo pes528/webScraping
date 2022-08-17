@@ -5,11 +5,12 @@ import datetime
 import time
 import pytz
 
+#ESTE SCRIPT EXTRAE DE MANERA AUTOMATICA LAS NOTICIAS DEL SECTOR ECONOMICO DEL PERIODICO EL DEBER.COM [TAREA PARA LA FACULTAD DE ECONOMIA FCEFA 1ER AÑO ]    
 
-#AUTHOR: MIGUEL AF 
+#AUTHOR: MIGUEL
 #TELEGRAM: @pes528
 
-
+#PARA ENVIAR LOS ARCHIVOS AL CANAL DE TELEGRAM, EL BOT DEBE SER ADMINISTRADOR DEL CANAL
 
 #la diferencia entre el sector economia y el sector economia/dinero es que el sector economia se actualiza constantemente en cambio el sector
 #economia/dinero lo hace de manera diferente y mas tardia y los xpath de ambos sectores son distintos
@@ -35,8 +36,8 @@ texto = "//div[@class='text-editor']/div[not(@class)]/p//text()"
 
 #-----------------------FUNCIONES UTILITARIAS-------------------------
 def enviaMensaje(mensaje):
-    user="@webScrapBol"
-    token="5464637143:AAGjEUGgmTtDZe7EHfA0hYtfc71buJ78Ijg"
+    user="NOMBRE DEL CANAL" #<<<<NOMBRE DEL CANAL DE TELEGRAM
+    token="TOKEN" #<<<<<<<<<<<<<<TOKEN DEL BOT
     pay={"chat_id":user,"text":mensaje}
     res=requests.get(f"https://api.telegram.org/bot{token}/sendMessage", data=pay)
 
